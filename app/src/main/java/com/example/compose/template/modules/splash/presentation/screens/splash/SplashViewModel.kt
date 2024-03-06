@@ -15,9 +15,11 @@ class SplashViewModel @Inject constructor(
     private val _isAuthenticated = MutableLiveData<Boolean>(null)
     val isAuthenticated: LiveData<Boolean> = _isAuthenticated
 
-    suspend fun getLoginToken() {
-        val token = getLoginTokenUseCase.execute()
-        _isAuthenticated.postValue(token != null)
+    /* suspend */ fun getLoginToken() {
+//        val token = getLoginTokenUseCase.execute()
+        // TODO: mock value, delete this and use the commented line below
+        _isAuthenticated.postValue(false)
+//        _isAuthenticated.postValue(token != null)
     }
 
 }

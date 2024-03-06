@@ -9,8 +9,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.compose.template.HOME_ROUTE
-import com.example.compose.template.LOGIN_ROUTE
-import com.example.compose.template.shared.presentation.ScreenTemplate
+import com.example.compose.template.USERNAME_ROUTE
+import com.example.compose.template.shared.presentation.Screen
 
 @Preview
 @Composable
@@ -29,10 +29,10 @@ fun SplashScreen(
 
     LaunchedEffect(Unit) { viewModel.getLoginToken() }
 
-    ScreenTemplate {
+    Screen {
         when (isAuthenticated.value) {
             true -> navController.navigate(HOME_ROUTE)
-            false -> navController.navigate(LOGIN_ROUTE)
+            false -> navController.navigate(USERNAME_ROUTE)
             null -> Text("LOADING...")
         }
     }
